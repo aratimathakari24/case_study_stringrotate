@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include<string.h>
+//left_rotate(char* input1,int input2);
+
+char* left_rotate(char* ,int );
+int main()
+{
+    char str[50];
+    int len,rotate;
+    fgets(str,sizeof(str),stdin);
+    scanf("%d",&rotate);
+    char *ptr=str;
+    //printf("%s",str);
+    len=strlen(str);
+   // printf("%d",len-1);
+  left_rotate(ptr,rotate);
+    return 0;
+}
+
+char* left_rotate(char* input1,int input2)
+{
+    int i,j;
+    char temp;
+    int length=strlen(input1);
+    if(length< input2)
+    {
+        
+        printf ("%s",input1);
+    }
+    else
+    {
+        for(i=0;i<input2;i++)
+        {
+             temp=input1[0];//temp=a
+            for(j=0;j<length-1;j++)
+            {
+                input1[j]=input1[j+1];
+            }
+            input1[length-1]=temp;
+        }
+       puts(input1);
+    }
+    }
